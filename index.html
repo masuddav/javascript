@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <style></style>
+    <title>decimal to hexadecimal number</title>
+    <script language="Javascript">
+        function hexa() {
+            var accum = "";
+            for (var i = 0; i < 3; i++) {
+                var dec = document.converter.elements[i].value;
+
+                var toNum = Math.floor(dec);
+                var toHex = toNum.toString(16);
+                if (toHex.lenght == 1) {
+                    toHex = "0" + toHex;
+                }
+                accum += toHex;
+            }
+            document.converter.hex.value = accum;
+        }
+    </script>
+</head>
+
+<body>
+    <center>decimal to hexdecimal Converter</center>
+    <br />
+    <form name="converter">
+        <input type="text" name="c1" size="3" />
+        <input type="text" name="c2" size="3" />
+        <input type="text" name="c3" size="3" /><br /> Enter decimal number<br />
+        <input type="button" value="convert to hexa" onClick="hexa()" /><br /><br />
+        <input type="text" name="hex" size="6" /> &nbsp;&nbsp;&nbsp;&nbsp;<br /> see here hexadecimal number
+    </form>
+</body>
+
+</html>
